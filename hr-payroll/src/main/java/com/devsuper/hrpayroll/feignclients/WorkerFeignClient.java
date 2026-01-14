@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.devsuper.hrpayroll.entities.Worker;
 
-
+//Feing Client para comunicação com o microserviço HR-WORKER
 @Component
 @FeignClient(
     name = "hr-worker",
-    url = "http://localhost:8001",
     path = "/workers"
 )
 public interface WorkerFeignClient {
 
+	
     @GetMapping("/{id}")
     ResponseEntity<Worker> findById(@PathVariable Long id);
 }
