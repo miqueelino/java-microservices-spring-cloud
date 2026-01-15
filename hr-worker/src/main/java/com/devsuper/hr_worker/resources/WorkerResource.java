@@ -38,6 +38,7 @@ public class WorkerResource {
     @GetMapping(value = "/{id}")
     public ResponseEntity<Worker> findById(@PathVariable Long id) {
     	
+    	//Simulação de demora na resposta
     	/*
     	try {
 			Thread.sleep(3000L);
