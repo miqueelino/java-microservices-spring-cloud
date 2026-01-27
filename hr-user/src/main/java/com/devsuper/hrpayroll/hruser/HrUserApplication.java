@@ -18,9 +18,11 @@ public class HrUserApplication implements CommandLineRunner {
 		SpringApplication.run(HrUserApplication.class, args);
 	}
 
+	
+	//método para gerar senha criptografada
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("BCRYPT = " + passwordEncoder.encode("123456"));
+		//System.out.println("BCRYPT = " + passwordEncoder.encode("123456"));
 		
 	}
 
