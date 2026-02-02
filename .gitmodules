@@ -1,0 +1,3 @@
+[submodule "ms-configs"]
+	path = ms-configs
+	url = https://github.com/miqueelino/ms-configs.git
