@@ -2,7 +2,8 @@
 
 Projeto backend desenvolvido em **Java** utilizando **Spring Boot** e **Spring Cloud**, com arquitetura de **microsserviços**, focado em autenticação, descoberta de serviços, gateway e configuração centralizada.
 
-Este projeto tem como objetivo demonstrar, na prática, a construção de um ecossistema distribuído seguindo boas práticas de backend, segurança e escalabilidade, próximo a cenários reais de empresas e ambientes corporativos.
+Este projeto apresenta a implementação de um ecossistema distribuído baseado em microsserviços, seguindo boas práticas de backend, segurança e escalabilidade, alinhado a padrões adotados em ambientes corporativos.
+
 
 ---
 
@@ -103,12 +104,12 @@ Repositório de configurações externas utilizado pelo **Config Server**, adici
 
 ---
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 
-João Miquelino
-Backend Developer | Java • Spring Boot • APIs REST
+**João Miquelino**  
+Backend Developer | Java • Spring Boot • APIs REST  
 
-🔗 LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202
-
+🔗 LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202  
 🔗 GitHub: https://github.com/joaomiquelino
+
 
