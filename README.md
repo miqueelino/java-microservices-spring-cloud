@@ -95,3 +95,20 @@ Repositório de configurações externas utilizado pelo **Config Server**, adici
 
 ---
 
+## 🎯 Objetivos do Projeto
+
+- Construir uma arquitetura de microsserviços baseada em padrões amplamente utilizados em ambientes corporativos
+- Implementar segurança e comunicação entre serviços utilizando OAuth2 e JWT
+- Evidenciar domínio de Spring Cloud aplicado a sistemas distribuídos
+
+---
+
+👨‍💻 Autor
+
+João Miquelino
+Backend Developer | Java • Spring Boot • APIs REST
+
+🔗 LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202
+
+🔗 GitHub: https://github.com/joaomiquelino
+
