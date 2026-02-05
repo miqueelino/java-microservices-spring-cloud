@@ -110,6 +110,6 @@ Repositório de configurações externas utilizado pelo **Config Server**, adici
 Backend Developer | Java • Spring Boot • APIs REST  
 
 🔗 LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202  
-🔗 GitHub: https://github.com/joaomiquelino
+🔗 GitHub: https://github.com/miqueelino
 
 
