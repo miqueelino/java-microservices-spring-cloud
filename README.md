@@ -26,6 +26,8 @@ Projeto backend completo desenvolvido com Java 17 + Spring Boot + Spring Cloud, 
 
 O projeto simula um ecossistema distribuído real, com separação clara de responsabilidades.
 
+
+```
                     ┌────────────────────┐
                     │   Config Server     │
                     └─────────▲──────────┘
@@ -53,161 +55,85 @@ O projeto simula um ecossistema distribuído real, com separação clara de resp
                    ┌──────────────┐
                    │  hr-oauth    │
                    └──────────────┘
+```
 
+## 🛠️ Tecnologias
 
-                   
+### 🔹 Backend
 
-*  **Tecnologias Utilizadas**
+* Java 17  
+* Spring Boot  
+* Spring Cloud  
+* Spring Security  
+* OAuth2  
+* JWT  
+
+### 🔹 Infraestrutura
+
+* Maven  
+* Git  
+* Git Submodules  
 
 ---
 
-## Backend
+## 📦 Microsserviços
 
-Java 17
+* **hr-eureka-server** – Service Discovery  
+* **hr-config-server** – Configuração centralizada  
+* **hr-api-gateway-zuul** – Roteamento e segurança  
+* **hr-oauth** – Autenticação e emissão de JWT  
+* **hr-user** – Gestão de usuários  
+* **hr-worker** – Serviço de domínio  
+* **hr-payroll** – Comunicação entre serviços (Feign Client)  
+* **ms-configs** – Repositório externo de configurações  
 
-Spring Boot
+---
 
-Spring Cloud
+## 🔐 Segurança
 
-Spring Security
+### 🔹 Fluxo implementado
 
-OAuth2
+1. Login via `hr-oauth`  
+2. Geração de JWT  
+3. Validação no API Gateway  
+4. Autorização entre microsserviços  
 
-JWT
+### 🔹 Características
 
-## Infraestrutura
+* Stateless authentication  
+* Tokens assinados  
+* Segurança centralizada  
 
-Maven
+---
 
-Git
+## ▶️ Execução
 
-Git Submodules
+### ✅ Pré-requisitos
 
-Configuração centralizada via Spring Cloud Config
+* Java 17+
+* Maven
+* Git
 
+### 📌 Ordem de inicialização
 
-## Microsserviços
+1. `hr-eureka-server`  
+2. `hr-config-server`  
+3. `hr-oauth`  
+4. `hr-user`, `hr-worker`, `hr-payroll`  
+5. `hr-api-gateway-zuul`  
 
-🔹 hr-eureka-server
+---
 
-Responsável pelo Service Discovery, permitindo que os serviços se registrem e se descubram dinamicamente.
+## 🎯 Objetivo
 
-🔹 hr-config-server
+Demonstrar domínio de:
 
-Servidor de configuração centralizada que consome o repositório ms-configs.
-
-Permite:
-
-Externalização de propriedades
-
-Mudança de configuração sem recompilação
-
-Centralização de ambientes
-
-🔹 hr-api-gateway-zuul
-
-API Gateway responsável por:
-
-Roteamento dinâmico
-
-Filtro de requisições
-
-Segurança centralizada
-
-Validação de JWT
-
-🔹 hr-oauth
-
-Serviço responsável por:
-
-Autenticação de usuários
-
-Emissão de tokens JWT
-
-Validação de credenciais
-
-Integração com Spring Security OAuth2
-
-🔹 hr-user
-
-Microsserviço de usuários:
-
-CRUD de usuários
-
-Persistência em banco de dados
-
-Integração com autenticação
-
-🔹 hr-worker
-
-Microsserviço de domínio utilizado para simulação de entidade de negócio.
-
-🔹 hr-payroll
-
-Microsserviço responsável por regras de cálculo de folha de pagamento, demonstrando:
-
-Comunicação entre microsserviços
-
-Uso de Feign Client
-
-Resiliência
-
-🔹 ms-configs
-
-Repositório externo de configurações adicionado como Git Submodule, utilizado pelo Config Server.
-
-## Segurança
-
-A arquitetura implementa um fluxo completo de autenticação e autorização:
-
-Usuário realiza login no hr-oauth
-
-Serviço gera um JWT Token
-
-Token é validado pelo API Gateway
-
-Microsserviços autorizam requisições com base no token
-
-Características:
-
-Tokens assinados
-
-Stateless authentication
-
-Controle de acesso centralizado
-
-▶️ Como Executar o Projeto
-✅ Pré-requisitos
-
-Java 17+
-
-Maven
-
-Git
-
-📌 Ordem de Inicialização
-
-1️⃣ Iniciar hr-eureka-server
-2️⃣ Iniciar hr-config-server
-3️⃣ Iniciar hr-oauth
-4️⃣ Iniciar hr-user, hr-worker, hr-payroll
-5️⃣ Iniciar hr-api-gateway-zuul
-
-🎯 Objetivos Técnicos
-
-Este projeto demonstra:
-
-Arquitetura de microsserviços real
-
-Padrões de sistemas distribuídos
-
-Comunicação entre serviços
-
-Centralização de configurações
-
-Segurança baseada em token
-
-Aplicação prática de Spring Cloud
+* Arquitetura de microsserviços  
+* Comunicação entre serviços  
+* Segurança com OAuth2 + JWT  
+* Ecossistema Spring Cloud
+* 
+---
 
 
 ## Autor
@@ -215,6 +141,6 @@ Aplicação prática de Spring Cloud
 João Miquelino
 Backend Developer | Java • Spring Boot • Microsservices
 
-🔗 LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202
+LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202
 
-🔗 GitHub: https://github.com/miqueelino
+GitHub: https://github.com/miqueelino
