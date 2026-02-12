@@ -132,7 +132,6 @@ Demonstrar domínio de:
 * Comunicação entre serviços  
 * Segurança com OAuth2 + JWT  
 * Ecossistema Spring Cloud
-* 
 ---
 
 
