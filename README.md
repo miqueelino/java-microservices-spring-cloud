@@ -57,7 +57,7 @@ O projeto simula um ecossistema distribuído real, com separação clara de resp
                    └──────────────┘
 ```
 
-## 🛠️ Tecnologias
+##  Tecnologias
 
 ### 🔹 Backend
 
@@ -76,7 +76,7 @@ O projeto simula um ecossistema distribuído real, com separação clara de resp
 
 ---
 
-## 📦 Microsserviços
+##  Microsserviços
 
 * **hr-eureka-server** – Service Discovery  
 * **hr-config-server** – Configuração centralizada  
@@ -89,7 +89,7 @@ O projeto simula um ecossistema distribuído real, com separação clara de resp
 
 ---
 
-## 🔐 Segurança
+##  Segurança
 
 ### 🔹 Fluxo implementado
 
@@ -106,15 +106,15 @@ O projeto simula um ecossistema distribuído real, com separação clara de resp
 
 ---
 
-## ▶️ Execução
+##  Execução
 
-### ✅ Pré-requisitos
+###  Pré-requisitos
 
 * Java 17+
 * Maven
 * Git
 
-### 📌 Ordem de inicialização
+###  Ordem de inicialização
 
 1. `hr-eureka-server`  
 2. `hr-config-server`  
@@ -124,7 +124,7 @@ O projeto simula um ecossistema distribuído real, com separação clara de resp
 
 ---
 
-## 🎯 Objetivo
+##  Objetivo
 
 Demonstrar domínio de:
 
