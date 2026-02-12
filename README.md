@@ -1,115 +1,219 @@
-#  Microservices Architecture – Spring Cloud
+### Java Microservices Architecture – Spring Cloud Ecosystem
 
-Projeto backend desenvolvido em **Java** utilizando **Spring Boot** e **Spring Cloud**, com arquitetura de **microsserviços**, focado em autenticação, descoberta de serviços, gateway e configuração centralizada.
-
-Este projeto apresenta a implementação de um ecossistema distribuído baseado em microsserviços, seguindo boas práticas de backend, segurança e escalabilidade, alinhado a padrões adotados em ambientes corporativos.
-
+---
+Projeto backend completo desenvolvido com Java 17 + Spring Boot + Spring Cloud, implementando uma arquitetura de microsserviços distribuídos com foco em escalabilidade, segurança e boas práticas adotadas em ambientes corporativos.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
 
-- **Java 17**
-- **Spring Boot**
-- **Spring Cloud**
-  - Eureka Server (Service Discovery)
-  - Spring Cloud Config (Config Server)
-  - Zuul API Gateway
-- **Spring Security**
-- **OAuth2**
-- **JWT (JSON Web Token)**
-- **Maven**
-- **Git / Git Submodules**
+## O sistema inclui:
 
----
+*  **Service Discovery (Eureka)**
 
-## 🧱 Arquitetura do Projeto
+*  **Configuração centralizada (Spring Cloud Config)**
 
-O sistema é composto pelos seguintes microsserviços:
+*  **API Gateway (Zuul)**
 
-### 🔹 `hr-eureka-server`
-Servidor de descoberta de serviços (**Service Registry**), responsável por registrar e localizar os microsserviços da aplicação.
+*  **Autenticação e Autorização com OAuth2 + JWT**
+
+*  **Comunicação entre microsserviços**
+
+*  **Configurações externas via Git Submodule**
 
 ---
 
-### 🔹 `hr-config-server`
-Servidor de configuração centralizada (**Spring Cloud Config**), responsável por fornecer configurações externas para os microsserviços, consumindo um repositório Git (`ms-configs`).
+## Arquitetura
+
+O projeto simula um ecossistema distribuído real, com separação clara de responsabilidades.
+
+                    ┌────────────────────┐
+                    │   Config Server     │
+                    └─────────▲──────────┘
+                              │
+                    ┌─────────┴──────────┐
+                    │   Eureka Server     │
+                    └─────────▲──────────┘
+                              │
+                    ┌─────────┴──────────┐
+                    │   API Gateway       │
+                    │      (Zuul)         │
+                    └───────▲───────▲────┘
+                            │       │
+          ┌─────────────────┘       └─────────────────┐
+          │                                           │
+   ┌─────────────┐                           ┌─────────────┐
+   │ hr-user     │                           │ hr-worker   │
+   └─────────────┘                           └─────────────┘
+                                                    ▲
+                                                    │
+                                            ┌─────────────┐
+                                            │ hr-payroll  │
+                                            └─────────────┘
+
+                   ┌──────────────┐
+                   │  hr-oauth    │
+                   └──────────────┘
+
+                   
+
+*  **Tecnologias Utilizadas**
 
 ---
 
-### 🔹 `hr-api-gateway-zuul`
+## Backend
+
+Java 17
+
+Spring Boot
+
+Spring Cloud
+
+Spring Security
+
+OAuth2
+
+JWT
+
+## Infraestrutura
+
+Maven
+
+Git
+
+Git Submodules
+
+Configuração centralizada via Spring Cloud Config
+
+
+## Microsserviços
+
+🔹 hr-eureka-server
+
+Responsável pelo Service Discovery, permitindo que os serviços se registrem e se descubram dinamicamente.
+
+🔹 hr-config-server
+
+Servidor de configuração centralizada que consome o repositório ms-configs.
+
+Permite:
+
+Externalização de propriedades
+
+Mudança de configuração sem recompilação
+
+Centralização de ambientes
+
+🔹 hr-api-gateway-zuul
+
 API Gateway responsável por:
-- Roteamento de requisições
-- Centralização de autenticação e autorização
-- Integração com OAuth2 e JWT
 
----
+Roteamento dinâmico
 
-### 🔹 `hr-oauth`
-Serviço de autenticação e autorização:
-- Login de usuários
-- Emissão de **JWT Tokens**
-- Validação de tokens
-- Integração com Spring Security OAuth2
+Filtro de requisições
 
----
+Segurança centralizada
 
-### 🔹 `hr-user`
-Microsserviço responsável pelo gerenciamento de usuários:
-- Persistência de usuários
-- Endpoints REST
-- Integração com autenticação e autorização
+Validação de JWT
 
----
+🔹 hr-oauth
 
-### 🔹 `hr-worker`
-Microsserviço de domínio utilizado como exemplo de serviço de negócio, configurado para consumir configurações externas via Config Server.
+Serviço responsável por:
 
----
+Autenticação de usuários
 
-### 🔹 `hr-payroll`
-Microsserviço responsável por regras de negócio relacionadas à folha de pagamento, demonstrando comunicação entre microsserviços.
+Emissão de tokens JWT
 
----
+Validação de credenciais
 
-### 🔹 `ms-configs`
-Repositório de configurações externas utilizado pelo **Config Server**, adicionado ao projeto como **Git Submodule**.
+Integração com Spring Security OAuth2
 
----
+🔹 hr-user
 
-## 🔐 Segurança
+Microsserviço de usuários:
 
-- Autenticação baseada em **OAuth2**
-- Autorização utilizando **JWT**
-- Controle de acesso centralizado via **API Gateway**
-- Tokens assinados e validados entre microsserviços
+CRUD de usuários
 
----
+Persistência em banco de dados
 
-## ▶️ Como Executar o Projeto
+Integração com autenticação
 
-### Pré-requisitos
+🔹 hr-worker
 
-- Java 17 ou superior
-- Maven
-- Git
+Microsserviço de domínio utilizado para simulação de entidade de negócio.
 
----
+🔹 hr-payroll
 
-## 🎯 Objetivos do Projeto
+Microsserviço responsável por regras de cálculo de folha de pagamento, demonstrando:
 
-- Construir uma arquitetura de microsserviços baseada em padrões amplamente utilizados em ambientes corporativos
-- Implementar segurança e comunicação entre serviços utilizando OAuth2 e JWT
-- Evidenciar domínio de Spring Cloud aplicado a sistemas distribuídos
+Comunicação entre microsserviços
 
----
+Uso de Feign Client
 
-## 👨‍💻 Autor
+Resiliência
 
-**João Miquelino**  
-Backend Developer | Java • Spring Boot • APIs REST  
+🔹 ms-configs
 
-🔗 LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202  
+Repositório externo de configurações adicionado como Git Submodule, utilizado pelo Config Server.
+
+## Segurança
+
+A arquitetura implementa um fluxo completo de autenticação e autorização:
+
+Usuário realiza login no hr-oauth
+
+Serviço gera um JWT Token
+
+Token é validado pelo API Gateway
+
+Microsserviços autorizam requisições com base no token
+
+Características:
+
+Tokens assinados
+
+Stateless authentication
+
+Controle de acesso centralizado
+
+▶️ Como Executar o Projeto
+✅ Pré-requisitos
+
+Java 17+
+
+Maven
+
+Git
+
+📌 Ordem de Inicialização
+
+1️⃣ Iniciar hr-eureka-server
+2️⃣ Iniciar hr-config-server
+3️⃣ Iniciar hr-oauth
+4️⃣ Iniciar hr-user, hr-worker, hr-payroll
+5️⃣ Iniciar hr-api-gateway-zuul
+
+🎯 Objetivos Técnicos
+
+Este projeto demonstra:
+
+Arquitetura de microsserviços real
+
+Padrões de sistemas distribuídos
+
+Comunicação entre serviços
+
+Centralização de configurações
+
+Segurança baseada em token
+
+Aplicação prática de Spring Cloud
+
+
+## Autor
+
+João Miquelino
+Backend Developer | Java • Spring Boot • Microsservices
+
+🔗 LinkedIn: https://www.linkedin.com/in/joão-miquelino-95ba34202
+
 🔗 GitHub: https://github.com/miqueelino
-
-
