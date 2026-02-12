@@ -54,6 +54,7 @@ O projeto simula um ecossistema distribuído real, com separação clara de resp
                    │  hr-oauth    │
                    └──────────────┘
 
+
                    
 
 *  **Tecnologias Utilizadas**
